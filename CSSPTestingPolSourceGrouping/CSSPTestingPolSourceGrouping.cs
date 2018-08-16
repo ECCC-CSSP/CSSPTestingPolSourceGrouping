@@ -180,12 +180,12 @@ namespace CSSPTestingPolSourceGrouping
                                                                                                        select c).FirstOrDefault();
                     if (Lang == "FR")
                     {
-                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevelGroup.Group } ({ groupChoiceChildLevelGroup.FR })";
+                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevelGroup.Group }"; // ({ groupChoiceChildLevelGroup.FR })";
                         labelReportList[senderID + 1].Text = ((PolSourceGroupingExcelFileRead.GroupChoiceChildLevel)comboBoxList[senderID + 1].SelectedItem).ReportFR;
                     }
                     else
                     {
-                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevelGroup.Group } ({ groupChoiceChildLevelGroup.EN })";
+                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevelGroup.Group }"; // ({ groupChoiceChildLevelGroup.EN })";
                         labelReportList[senderID + 1].Text = ((PolSourceGroupingExcelFileRead.GroupChoiceChildLevel)comboBoxList[senderID + 1].SelectedItem).ReportEN;
                     }
                 }
@@ -193,11 +193,11 @@ namespace CSSPTestingPolSourceGrouping
                 {
                     if (Lang == "FR")
                     {
-                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevel.Group } ({ groupChoiceChildLevel.FR })";
+                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevel.Group }"; // ({ groupChoiceChildLevel.FR })";
                     }
                     else
                     {
-                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevel.Group } ({ groupChoiceChildLevel.EN })";
+                        labelGroupList[senderID + 1].Text = $"{ groupChoiceChildLevel.Group }"; // ({ groupChoiceChildLevel.EN })";
                     }
                 }
             }
@@ -342,12 +342,12 @@ namespace CSSPTestingPolSourceGrouping
 
             if (Lang == "FR")
             {
-                labelGroupList[0].Text = $"{ groupChoiceChildLevelGroup.Group } ({ groupChoiceChildLevelGroup.FR })";
+                labelGroupList[0].Text = $"{ groupChoiceChildLevelGroup.Group }"; // ({ groupChoiceChildLevelGroup.FR })";
                 labelReportList[0].Text = ((PolSourceGroupingExcelFileRead.GroupChoiceChildLevel)comboBoxList[0].SelectedItem).ReportFR;
             }
             else
             {
-                labelGroupList[0].Text = $"{ groupChoiceChildLevelGroup.Group } ({ groupChoiceChildLevelGroup.EN })";
+                labelGroupList[0].Text = $"{ groupChoiceChildLevelGroup.Group }"; // ({ groupChoiceChildLevelGroup.EN })";
                 labelReportList[0].Text = ((PolSourceGroupingExcelFileRead.GroupChoiceChildLevel)comboBoxList[0].SelectedItem).ReportEN;
             }
 
