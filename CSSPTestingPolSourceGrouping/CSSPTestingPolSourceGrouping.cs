@@ -31,7 +31,7 @@ namespace CSSPTestingPolSourceGrouping
             InitializeComponent();
             polSourceGroupingExcelFileRead = new PolSourceGroupingExcelFileRead();
             polSourceGroupingExcelFileRead.Status += PolSourceGroupingExcelFileRead_Status;
-            polSourceGroupingExcelFileRead.Error += PolSourceGroupingExcelFileRead_Error;
+            polSourceGroupingExcelFileRead.CSSPError += PolSourceGroupingExcelFileRead_CSSPError;
             DrawForm();
             textBoxFileLocation.Text = $@"{ Environment.GetFolderPath(Environment.SpecialFolder.Desktop) }\PolSourceGrouping.xlsm";
         }
@@ -202,9 +202,9 @@ namespace CSSPTestingPolSourceGrouping
                 }
             }
         }
-        private void PolSourceGroupingExcelFileRead_Error(object sender, PolSourceGroupingExcelFileRead.ErrorEventArgs e)
+        private void PolSourceGroupingExcelFileRead_CSSPError(object sender, PolSourceGroupingExcelFileRead.CSSPErrorEventArgs e)
         {
-            richTextBoxStatus.AppendText($"{ e.error }\r\n");
+            richTextBoxStatus.AppendText($"{ e.CSSPError }\r\n");
             richTextBoxStatus.Refresh();
             Application.DoEvents();
         }
