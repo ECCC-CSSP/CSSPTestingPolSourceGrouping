@@ -82,7 +82,7 @@ namespace CSSPTestingPolSourceGrouping
             int senderID = int.Parse(senderStr.Substring(senderStr.IndexOf("_") + 1));
             PolSourceGroupingExcelFileRead.GroupChoiceChildLevel groupChoiceChildLevelSelected = (PolSourceGroupingExcelFileRead.GroupChoiceChildLevel)((ComboBox)sender).SelectedItem;
 
-            if (groupChoiceChildLevelSelected.EN.StartsWith("------"))
+            if (groupChoiceChildLevelSelected.EN.StartsWith("ZZZZZZ"))
             {
                 MessageBox.Show("Invalid selection");
                 return;
@@ -137,8 +137,8 @@ namespace CSSPTestingPolSourceGrouping
                     {
                         List<string> CSSPIDList = groupChoiceChildLevelSelected.Hide.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(c => c.Trim()).ToList();
 
-                        groupChoiceChildLevelChild.FR = groupChoiceChildLevelChild.FR.Trim().Replace("------   ", "");
-                        groupChoiceChildLevelChild.EN = groupChoiceChildLevelChild.EN.Trim().Replace("------   ", "");
+                        groupChoiceChildLevelChild.FR = groupChoiceChildLevelChild.FR.Trim().Replace("ZZZZZZ   ", "");
+                        groupChoiceChildLevelChild.EN = groupChoiceChildLevelChild.EN.Trim().Replace("ZZZZZZ   ", "");
 
                         if (CSSPIDList.Count > 0)
                         {
@@ -151,8 +151,8 @@ namespace CSSPTestingPolSourceGrouping
                             }
                             else
                             {
-                                groupChoiceChildLevelChild.FR = $"------   { groupChoiceChildLevelChild.FR.Trim() }";
-                                groupChoiceChildLevelChild.EN = $"------   { groupChoiceChildLevelChild.EN.Trim() }";
+                                groupChoiceChildLevelChild.FR = $"ZZZZZZ   { groupChoiceChildLevelChild.FR.Trim() }";
+                                groupChoiceChildLevelChild.EN = $"ZZZZZZ   { groupChoiceChildLevelChild.EN.Trim() }";
 
                                 comboBoxList[senderID + 1].Items.Add(groupChoiceChildLevelChild);
                             }
@@ -168,7 +168,7 @@ namespace CSSPTestingPolSourceGrouping
 
                     for (int i = 0, count = comboBoxList[senderID + 1].Items.Count; i < count; i++)
                     {
-                        if (!((PolSourceGroupingExcelFileRead.GroupChoiceChildLevel)comboBoxList[senderID + 1].Items[i]).EN.StartsWith("------   "))
+                        if (!((PolSourceGroupingExcelFileRead.GroupChoiceChildLevel)comboBoxList[senderID + 1].Items[i]).EN.StartsWith("ZZZZZZ   "))
                         {
                             comboBoxList[senderID + 1].SelectedIndex = i;
                             break;
@@ -264,6 +264,7 @@ namespace CSSPTestingPolSourceGrouping
                     TabIndex = 699 + i,
                 };
 
+                comboBox.Sorted = true;
                 comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
                 comboBoxList.Add(comboBox);
                 panel4.Controls.Add(comboBox);
